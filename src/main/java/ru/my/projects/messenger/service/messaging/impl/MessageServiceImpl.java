@@ -20,8 +20,8 @@ public class MessageServiceImpl implements MessageService {
         template.convertAndSend("/topic/message", MessageConverter.convertToMessageDto(newMessage));
     }
 
-    @Override
-    public void deleteMessage(DeleteMessageDto message) {
-        // todo удалить из базы;
-    }
+//    @Override
+//    public void deleteMessage(DeleteMessageDto message) {
+//        // todo удалить из базы;
+//    }
 }

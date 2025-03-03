@@ -5,5 +5,5 @@ import ru.my.projects.messenger.dto.SaveNewMessageDto;
 
 public interface MessageService {
     void createMessage(SaveNewMessageDto newMessage);
-    void deleteMessage(DeleteMessageDto message);
+//    void deleteMessage(DeleteMessageDto message);
 }
