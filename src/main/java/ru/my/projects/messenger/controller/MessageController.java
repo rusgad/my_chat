@@ -18,7 +18,7 @@ public class MessageController {
 
     private MessageService messageService;
 
-    @PostMapping("/create-new-message")
+    @PostMapping("/new")
     public ResponseEntity<?> createNewMessage(@RequestBody SaveNewMessageDto newMessageDto) {
         try {
             messageService.createMessage(newMessageDto);
@@ -30,7 +30,7 @@ public class MessageController {
 
     @SubscribeMapping("/message")
     public MessageDto send(MessageDto message) {
-//        а когда заполняется principal? todo позже добавить идентификацию пользователя
+//  todo позже добавить идентификацию пользователя
         return message;
     }
 }
