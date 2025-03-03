@@ -10,12 +10,11 @@ import ru.my.projects.messenger.enums.Role;
 import java.util.Collection;
 import java.util.List;
 
-@Entity
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 @Table(name = "users")
 public class User implements UserDetails {
 

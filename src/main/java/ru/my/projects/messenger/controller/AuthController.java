@@ -28,9 +28,4 @@ public class AuthController {
     public JwtAuthenticationResponseDto signIn(@RequestBody @Valid SignInRequestDto request) {
         return authenticationService.signIn(request);
     }
-
-    @GetMapping
-    public String getAuth() {
-        return "login";
-    }
 }
