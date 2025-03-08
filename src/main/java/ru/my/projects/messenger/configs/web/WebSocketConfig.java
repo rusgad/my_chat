@@ -27,11 +27,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     public static final String TOPIC_DESTINATION_PREFIX = "/topic";
 
-//    @Override
-//    public void configureMessageBroker(MessageBrokerRegistry config) {
-//        config.enableSimpleBroker("/topic"); // - создаем очередь topic
-//        config.setApplicationDestinationPrefixes("/app"); // - просто префикс после которого мы ставим точку контроллера (messages)
-//    }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
