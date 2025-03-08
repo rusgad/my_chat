@@ -15,9 +15,9 @@ public class MessageServiceImpl implements MessageService {
     SimpMessagingTemplate template;
 
     @Override
-    public void createMessage(SaveNewMessageDto newMessage) {
+    public void createMessage(SaveNewMessageDto newMessage, String username) {
         // todo сохранить в базу
-        template.convertAndSend("/topic/message", MessageConverter.convertToMessageDto(newMessage));
+        template.convertAndSend("/topic/message." + newMessage.getChatName(), MessageConverter.convertToMessageDto(newMessage, username));
     }
 
 //    @Override

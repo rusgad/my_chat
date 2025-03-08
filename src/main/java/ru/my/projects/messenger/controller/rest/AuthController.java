@@ -1,4 +1,4 @@
-package ru.my.projects.messenger.controller;
+package ru.my.projects.messenger.controller.rest;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

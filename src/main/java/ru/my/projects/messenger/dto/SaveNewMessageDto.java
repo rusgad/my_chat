@@ -4,6 +4,6 @@ import lombok.Getter;
 
 @Getter
 public class SaveNewMessageDto {
-    private String from;
     private String content;
+    private String chatName;
 }

@@ -1,4 +1,4 @@
-package ru.my.projects.messenger.controller;
+package ru.my.projects.messenger.controller.rest;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +9,7 @@ import ru.my.projects.messenger.service.chat.ChatService;
 import java.security.Principal;
 
 @RestController
-@RequestMapping("/chat")
+@RequestMapping("/chats")
 @AllArgsConstructor
 public class ChatController {
 
