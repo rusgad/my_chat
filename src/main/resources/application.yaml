@@ -12,6 +12,7 @@ spring:
     database: postgresql
     hibernate:
       ddl-auto: update
+    show-sql: true
 
   rabbitmq:
     host: localhost

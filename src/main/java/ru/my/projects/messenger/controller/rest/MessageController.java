@@ -4,14 +4,13 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ru.my.projects.messenger.dto.MessageDto;
 import ru.my.projects.messenger.dto.SaveNewMessageDto;
 import ru.my.projects.messenger.service.messaging.MessageService;
 
 import java.security.Principal;
+import java.util.List;
 
 @RestController
 @RequestMapping("/message")
@@ -26,9 +25,19 @@ public class MessageController {
     public ResponseEntity<?> createNewMessage(@RequestBody SaveNewMessageDto newMessageDto, Principal principal) {
         try {
             messageService.createMessage(newMessageDto, principal.getName());
+            return ResponseEntity.ok().build();
         } catch (Exception ex) {
             return ResponseEntity.internalServerError().build();
         }
-        return ResponseEntity.ok().build();
+    }
+
+    @Operation(summary = "Загрузить историю сообщений для чата")
+    @GetMapping("/chat-history")
+    public ResponseEntity<List<MessageDto>> getChatHistory(@RequestParam String chatName) {
+        try {
+            return ResponseEntity.ok(messageService.getMessages(chatName));
+        } catch (Exception ex) {
+            return ResponseEntity.internalServerError().build();
+        }
     }
 }

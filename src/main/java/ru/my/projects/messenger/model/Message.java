@@ -21,15 +21,17 @@ public class Message {
     @SequenceGenerator(name = "message_id_seq", sequenceName = "message_id_seq", allocationSize = 1)
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
-
-    @Column(name = "chat_id", nullable = false)
-    private Long chatId;
-
     @Column(name = "content", nullable = false)
     private String content;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "chat_id", referencedColumnName = "id", unique = false)
+    private Chat chat;
 }

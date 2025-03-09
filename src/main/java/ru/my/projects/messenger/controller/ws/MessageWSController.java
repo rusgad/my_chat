@@ -13,7 +13,6 @@ public class MessageWSController {
 
     @SubscribeMapping("/message.{chat_id}")
     public MessageDto send(@DestinationVariable("chat_id") String chatId, MessageDto message, Principal principal) {
-        System.out.println(principal.getName() + " " + chatId);
         return message;
     }
 }

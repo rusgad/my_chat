@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.List;
 import java.util.Set;
 
 @Builder
@@ -16,5 +17,5 @@ public class CreateChatDto {
     private String chatName;
 
     @Schema(name = "Список участников чата", requiredMode = Schema.RequiredMode.REQUIRED)
-    private Set<String> participantUsernames;
+    private List<String> participantUsernames;
 }
